@@ -52,4 +52,14 @@ public class NumberConversionServiceImpl implements NumberConvertService {
 			throw new NoRecordFoundException();
 		}
 	}
+	
+	
+	public String convertNumberToWord(int number) {
+		
+		NumberConversion conversion = new NumberConversion();
+		String convertedWord = conversion.getNumberConversionSoap().numberToWords(BigInteger.valueOf(number));
+		
+		return convertedWord;
+		
+	}
 }
